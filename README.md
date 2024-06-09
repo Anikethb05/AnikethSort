@@ -1,11 +1,33 @@
-# AnikethSort
-Aniketh's Sorting Algorithm - A new comparison-based sorting algorithm.
 
-Aniketh's Sorting Algorithm is a comparison-based sorting algorithm where each element in the array is compared with every other element. If the current element is greater than the compared element, they are swapped. This process continues until all elements are sorted.
+## Java Implementation
 
-## Pseudocode
-for i from 0 to n-1 do:
-    for j from 0 to n-1 do:
-        if arr[j] > arr[i] then:
-            swap arr[j] and arr[i]
-return arr
+import java.util.Scanner;
+
+class AnikethSort {
+    public static void main(String[] args) {
+        System.out.print("Enter size of array: ");
+        Scanner scanner = new Scanner(System.in);
+        int len = scanner.nextInt();
+        int[] arr = new int[len];
+        System.out.println("Enter elements: ");
+        for (int i = 0; i < len; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Aniketh's Sorting Algorithm
+        for (int i = 0; i < len; i++) {
+            for (int j = 0; j < len; j++) {
+                if (arr[j] > arr[i]) {
+                    int temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+
+        System.out.print("Sorted array: ");
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+    }
+}
