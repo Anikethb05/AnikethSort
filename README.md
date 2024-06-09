@@ -1,6 +1,6 @@
 
 ## Java Implementation
-
+```java
 import java.util.Scanner;
 
 class AnikethSort {
